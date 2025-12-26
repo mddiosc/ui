@@ -84,23 +84,31 @@ type Story = StoryObj<typeof Input>;
 
 // Story 1: All Variants
 export const AllVariants: Story = {
-  render: () => (
+  args: {
+    size: 'md',
+    placeholder: 'Enter text',
+  },
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '300px' }}>
-      <Input variant="text" placeholder="Text input" />
-      <Input variant="email" placeholder="Email input" />
-      <Input variant="password" placeholder="Password input" />
-      <Input variant="search" placeholder="Search input" />
+      <Input {...args} variant="text" placeholder="Text input" />
+      <Input {...args} variant="email" placeholder="Email input" />
+      <Input {...args} variant="password" placeholder="Password input" />
+      <Input {...args} variant="search" placeholder="Search input" />
     </div>
   ),
 };
 
 // Story 2: All Sizes
 export const AllSizes: Story = {
-  render: () => (
+  args: {
+    variant: 'text',
+    placeholder: 'Input',
+  },
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '300px' }}>
-      <Input size="sm" placeholder="Small input" />
-      <Input size="md" placeholder="Medium input (default)" />
-      <Input size="lg" placeholder="Large input" />
+      <Input {...args} size="sm" placeholder="Small input" />
+      <Input {...args} size="md" placeholder="Medium input (default)" />
+      <Input {...args} size="lg" placeholder="Large input" />
     </div>
   ),
 };
