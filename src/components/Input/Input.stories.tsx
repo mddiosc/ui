@@ -115,12 +115,17 @@ export const AllSizes: Story = {
 
 // Story 3: With Label
 export const WithLabel: Story = {
-  render: () => (
+  args: {
+    variant: 'email',
+    placeholder: 'you@example.com',
+    size: 'md',
+  },
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '300px' }}>
       <label htmlFor="email" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
         Email Address
       </label>
-      <Input id="email" variant="email" placeholder="you@example.com" />
+      <Input {...args} id="email" />
       <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>
         We'll never share your email with anyone else.
       </span>
@@ -130,13 +135,16 @@ export const WithLabel: Story = {
 
 // Story 4: With Helper Text
 export const WithHelperText: Story = {
-  render: () => (
+  args: {
+    size: 'md',
+  },
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '300px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <label htmlFor="username" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
           Username
         </label>
-        <Input id="username" placeholder="Enter username" />
+        <Input {...args} id="username" placeholder="Enter username" />
         <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>
           Choose a unique username
         </span>
@@ -146,7 +154,7 @@ export const WithHelperText: Story = {
         <label htmlFor="password" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
           Password
         </label>
-        <Input id="password" variant="password" placeholder="Enter password" />
+        <Input {...args} id="password" variant="password" placeholder="Enter password" />
         <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>
           Must be at least 8 characters
         </span>
@@ -157,16 +165,20 @@ export const WithHelperText: Story = {
 
 // Story 5: Error State with Play Function
 export const ErrorState: Story = {
-  render: () => (
+  args: {
+    variant: 'email',
+    error: true,
+    placeholder: 'you@example.com',
+    size: 'md',
+  },
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '300px' }}>
       <label htmlFor="error-input" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
         Email Address
       </label>
       <Input 
+        {...args}
         id="error-input" 
-        variant="email" 
-        error 
-        placeholder="you@example.com"
         aria-invalid="true"
         aria-describedby="error-message"
       />
@@ -186,10 +198,35 @@ export const ErrorState: Story = {
   },
 };
 
-// Story 6: Interactive Input with Play Function
+// Story 6: Success State
+export const SuccessState: Story = {
+  args: {
+    variant: 'email',
+    state: 'success',
+    defaultValue: 'user@example.com',
+    size: 'md',
+  },
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '300px' }}>
+      <label htmlFor="success-input" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
+        Email Address
+      </label>
+      <Input 
+        {...args}
+        id="success-input"
+      />
+      <span style={{ fontSize: '0.75rem', color: '#16a34a' }}>
+        ✓ Email is valid
+      </span>
+    </div>
+  ),
+};
+
+// Story 7: Interactive Input with Play Function
 export const InteractiveInput: Story = {
   args: {
     placeholder: 'Type something...',
+    size: 'md',
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -212,30 +249,11 @@ export const InteractiveInput: Story = {
   },
 };
 
-// Story 7: Disabled State
+// Story 8: Disabled State
 export const Disabled: Story = {
   args: {
     disabled: true,
     placeholder: 'Disabled input',
+    size: 'md',
   },
-};
-
-// Story 8: Success State
-export const SuccessState: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '300px' }}>
-      <label htmlFor="success-input" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
-        Email Address
-      </label>
-      <Input 
-        id="success-input" 
-        variant="email" 
-        state="success"
-        defaultValue="user@example.com"
-      />
-      <span style={{ fontSize: '0.75rem', color: '#16a34a' }}>
-        ✓ Email is valid
-      </span>
-    </div>
-  ),
 };
