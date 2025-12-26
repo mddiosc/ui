@@ -5,17 +5,20 @@ import { buttonRecipe } from '../../recipes/button.recipe';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The visual style variant of the button
+   * @default 'primary'
    */
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'destructive';
   
   /**
    * The size of the button
+   * @default 'md'
    */
   size?: 'sm' | 'md' | 'lg';
   
   /**
    * If true, the button will be rendered as a child element.
    * Useful for composition with other components.
+   * @default false
    */
   asChild?: boolean;
 }
@@ -32,7 +35,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * ```
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
     
     return (
@@ -46,3 +49,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
+
