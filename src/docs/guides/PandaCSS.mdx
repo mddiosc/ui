@@ -1,0 +1,170 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Guides/Panda CSS" />
+
+# Understanding Panda CSS
+
+Learn how our zero-runtime styling system works.
+
+## 🐼 What is Panda CSS?
+
+Panda CSS is a **zero-runtime CSS-in-JS** library that generates CSS at build time instead of runtime.
+
+### Key Concept
+
+Traditional CSS-in-JS generates CSS in the browser (runtime overhead).
+
+Panda CSS generates CSS at build time (zero runtime overhead).
+
+## 🔄 How It Works
+
+### 1. Configuration
+
+Define design tokens in `panda.config.ts`:
+
+```typescript
+export default defineConfig({
+  theme: {
+    tokens: {
+      colors: {
+        blue: { 500: { value: '#3b82f6' } }
+      }
+    }
+  }
+});
+```
+
+### 2. Code Generation
+
+Run `pnpm panda codegen` to generate `styled-system/`:
+
+```bash
+pnpm panda codegen
+```
+
+### 3. Use in Components
+
+```typescript
+import { cva } from '../styled-system/css';
+
+const button = cva({
+  base: {
+    bg: 'blue.500',
+    padding: '4',
+  }
+});
+```
+
+### 4. Build Output
+
+Panda generates optimized CSS:
+
+```css
+:root {
+  --colors-blue-500: #3b82f6;
+}
+
+.bg_blue\.500 {
+  background: var(--colors-blue-500);
+}
+```
+
+## 📁 The styled-system Directory
+
+The `styled-system/` directory is **auto-generated code**.
+
+```
+panda.config.ts
+    ↓
+pnpm panda codegen
+    ↓
+styled-system/
+```
+
+### Structure
+
+```
+styled-system/
+├── css/        # Styling functions
+├── jsx/        # JSX components
+├── tokens/     # Token accessors
+└── styles.css  # Generated CSS
+```
+
+### Why gitignored?
+
+It's generated code like `node_modules/`:
+- Each developer generates it locally
+- Avoids merge conflicts
+- Always in sync with config
+
+## 🎨 Core Functions
+
+### cva() - Component Variants
+
+```typescript
+import { cva } from '../styled-system/css';
+
+const button = cva({
+  base: {
+    padding: '2',
+    borderRadius: 'md',
+  },
+  variants: {
+    variant: {
+      primary: { bg: 'blue.500' },
+      secondary: { bg: 'gray.200' },
+    }
+  }
+});
+```
+
+### css() - Basic Styling
+
+```typescript
+import { css } from '../styled-system/css';
+
+const className = css({
+  padding: '4',
+  background: 'blue.500',
+});
+```
+
+### token() - Access Tokens
+
+```typescript
+import { token } from '../styled-system/tokens';
+
+const color = token('colors.blue.500');
+```
+
+## ⚡ Performance Benefits
+
+| Aspect | Traditional | Panda CSS |
+|--------|------------|-----------|
+| Runtime | Generates in browser | Zero runtime |
+| Bundle | Includes library | No library |
+| Performance | Runtime overhead | Static CSS |
+
+## 🔧 Development Workflow
+
+1. Edit `panda.config.ts`
+2. Run `pnpm panda codegen`
+3. Use in your code
+4. Get TypeScript autocomplete
+
+## 📝 Best Practices
+
+### Do
+- Use semantic tokens
+- Create recipes for components
+- Let Panda generate styled-system
+
+### Don't
+- Edit styled-system manually
+- Commit styled-system to git
+- Skip panda codegen
+
+---
+
+**Next:** Explore the [Button component](/?path=/docs/components-button--docs)

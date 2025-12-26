@@ -1,0 +1,130 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorScale, SemanticColor } from '../components/ColorSwatch';
+
+<Meta title="Foundation/Colors" />
+
+# Colors
+
+Our color system provides a comprehensive palette for building consistent, accessible interfaces.
+
+## Color Philosophy
+
+- **Systematic** - Predictable scales from light to dark
+- **Accessible** - WCAG AA compliant contrast ratios
+- **Semantic** - Meaningful names for common use cases
+- **Flexible** - Easy to extend and customize
+
+---
+
+## Base Color Scales
+
+### Gray Scale
+
+The foundation of our color system. Used for text, borders, and backgrounds.
+
+<ColorScale colorName="gray" shades={[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]} />
+
+**Usage:**
+- `gray.50-200` - Backgrounds and surfaces
+- `gray.300-400` - Borders and dividers
+- `gray.500-900` - Text and icons
+
+---
+
+### Primary (Blue)
+
+Our brand color, used for primary actions and interactive elements.
+
+<ColorScale colorName="blue" shades={[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]} />
+
+**Usage:**
+- `blue.50-200` - Subtle backgrounds
+- `blue.600` - Primary buttons and links (default)
+- `blue.700-800` - Hover and active states
+
+---
+
+### Success (Green)
+
+Indicates successful operations and positive states.
+
+<ColorScale colorName="green" shades={[50, 100, 200, 300, 400, 500, 600, 700, 800, 900]} />
+
+---
+
+### Error (Red)
+
+Communicates errors, warnings, and destructive actions.
+
+<ColorScale colorName="red" shades={[50, 100, 200, 300, 400, 500, 600, 700, 800, 900]} />
+
+---
+
+### Warning (Yellow)
+
+Highlights important information and caution states.
+
+<ColorScale colorName="yellow" shades={[50, 100, 200, 300, 400, 500, 600, 700, 800, 900]} />
+
+---
+
+## Semantic Colors
+
+Semantic tokens provide meaningful names that adapt to context.
+
+### Background Colors
+
+<div style={{ marginBottom: '2rem' }}>
+  <SemanticColor name="bg.canvas" value="#ffffff" />
+  <SemanticColor name="bg.surface" value="#f9fafb" />
+  <SemanticColor name="bg.muted" value="#f3f4f6" />
+</div>
+
+### Text Colors
+
+<div style={{ marginBottom: '2rem' }}>
+  <SemanticColor name="text.primary" value="#111827" />
+  <SemanticColor name="text.secondary" value="#4b5563" />
+  <SemanticColor name="text.tertiary" value="#6b7280" />
+  <SemanticColor name="text.disabled" value="#9ca3af" />
+</div>
+
+### Interactive Colors
+
+<div style={{ marginBottom: '2rem' }}>
+  <SemanticColor name="primary.default" value="#2563eb" />
+  <SemanticColor name="primary.hover" value="#1d4ed8" />
+  <SemanticColor name="success.default" value="#16a34a" />
+  <SemanticColor name="error.default" value="#dc2626" />
+  <SemanticColor name="warning.default" value="#ca8a04" />
+</div>
+
+---
+
+## Usage in Code
+
+### With Panda CSS
+
+```typescript
+import { css } from '../styled-system/css';
+
+const styles = css({
+  bg: 'primary.default',
+  color: 'text.inverse',
+  _hover: {
+    bg: 'primary.hover',
+  }
+});
+```
+
+### Programmatic Access
+
+```typescript
+import { token } from '../styled-system/tokens';
+
+const primaryColor = token('colors.blue.600');
+```
+
+---
+
+**Next:** [Typography](/?path=/docs/foundation-typography--docs) • [Spacing](/?path=/docs/foundation-spacing--docs)

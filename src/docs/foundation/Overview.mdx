@@ -1,0 +1,134 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundation/Overview" />
+
+# Design System
+
+A comprehensive design token system built with Panda CSS for consistent, scalable interfaces.
+
+## What is a Design System?
+
+A design system is a collection of reusable components, guided by clear standards, that can be assembled to build applications.
+
+### Our Principles
+
+- **Consistency** - Single source of truth for design decisions
+- **Accessibility** - WCAG AA compliant by default
+- **Scalability** - Easy to extend and customize
+- **Type Safety** - Full TypeScript support with autocomplete
+- **Performance** - Zero-runtime CSS generation
+
+---
+
+## Foundation
+
+The building blocks of our design system.
+
+### [Colors](/?path=/docs/foundation-colors--docs)
+Comprehensive color palettes with semantic tokens for consistent theming.
+- Base scales (Gray, Blue, Green, Red, Yellow)
+- Semantic tokens (bg, text, border, interactive)
+- Accessibility guidelines
+
+### [Typography](/?path=/docs/foundation-typography--docs)
+Type scale, weights, and line heights for readable, hierarchical text.
+- Font sizes (xs → 3xl)
+- Font weights (thin → black)
+- Line heights and usage guidelines
+
+### [Spacing](/?path=/docs/foundation-spacing--docs)
+Consistent spacing system based on 4px increments.
+- Spacing scale (0 → 24)
+- Padding and margin guidelines
+- Layout spacing patterns
+
+### [Shadows](/?path=/docs/foundation-shadows--docs)
+Elevation system for depth and hierarchy.
+- Shadow scale (xs → 2xl)
+- Usage guidelines
+- Interactive patterns
+
+---
+
+## Guides
+
+Learn how to use the design system effectively.
+
+### [Panda CSS](/?path=/docs/guides-panda-css--docs)
+Understanding our zero-runtime styling system.
+- How Panda CSS works
+- The styled-system directory
+- Core functions (cva, css, token)
+- Best practices
+
+### [Getting Started](/?path=/docs/introduction-getting-started--docs)
+Installation and setup guide.
+- Project setup
+- Development workflow
+- Available scripts
+
+---
+
+## Components
+
+Explore our component library.
+
+### [Button](/?path=/docs/components-button--docs)
+Interactive button component with multiple variants and sizes.
+
+**More components coming soon...**
+
+---
+
+## Quick Reference
+
+### Using Tokens
+
+```typescript
+import { css } from '../styled-system/css';
+
+const styles = css({
+  // Colors
+  bg: 'primary.default',
+  color: 'text.inverse',
+  
+  // Spacing
+  p: '4',
+  m: '2',
+  
+  // Typography
+  fontSize: 'md',
+  fontWeight: 'semibold',
+  
+  // Shadows
+  boxShadow: 'md',
+  
+  // Border radius
+  borderRadius: 'lg',
+});
+```
+
+### Component Variants
+
+```typescript
+import { cva } from '../styled-system/css';
+
+const button = cva({
+  base: {
+    px: '4',
+    py: '2',
+    borderRadius: 'md',
+  },
+  variants: {
+    variant: {
+      primary: { bg: 'primary.default' },
+      secondary: { bg: 'bg.muted' },
+    }
+  }
+});
+```
+
+---
+
+**Explore:** [Colors](/?path=/docs/foundation-colors--docs) • [Typography](/?path=/docs/foundation-typography--docs) • [Spacing](/?path=/docs/foundation-spacing--docs) • [Shadows](/?path=/docs/foundation-shadows--docs)
+

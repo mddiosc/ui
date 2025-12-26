@@ -1,0 +1,112 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SpacingBox } from '../components/DesignTokens';
+
+<Meta title="Foundation/Spacing" />
+
+# Spacing
+
+Our spacing system creates consistent rhythm and visual hierarchy throughout the interface.
+
+## Spacing Scale
+
+Based on a 4px (0.25rem) base unit for mathematical precision.
+
+<SpacingBox size="0" label="0 - 0px" />
+<SpacingBox size="1" label="1 - 4px" />
+<SpacingBox size="2" label="2 - 8px" />
+<SpacingBox size="3" label="3 - 12px" />
+<SpacingBox size="4" label="4 - 16px (base)" />
+<SpacingBox size="5" label="5 - 20px" />
+<SpacingBox size="6" label="6 - 24px" />
+<SpacingBox size="8" label="8 - 32px" />
+<SpacingBox size="10" label="10 - 40px" />
+<SpacingBox size="12" label="12 - 48px" />
+<SpacingBox size="16" label="16 - 64px" />
+<SpacingBox size="20" label="20 - 80px" />
+<SpacingBox size="24" label="24 - 96px" />
+
+---
+
+## Usage Guidelines
+
+### Component Spacing
+
+**Padding (Internal spacing):**
+- `p="2"` (8px) - Tight padding for small elements
+- `p="4"` (16px) - Standard padding for buttons, inputs
+- `p="6"` (24px) - Comfortable padding for cards
+
+**Margin (External spacing):**
+- `m="2"` (8px) - Tight spacing between related elements
+- `m="4"` (16px) - Standard spacing between components
+- `m="8"` (32px) - Section spacing
+
+### Layout Spacing
+
+**Gaps:**
+- `gap="2"` (8px) - Tight lists or inline elements
+- `gap="4"` (16px) - Standard component spacing
+- `gap="6"` (24px) - Comfortable spacing for cards
+
+**Sections:**
+- `mb="8"` (32px) - Between sections
+- `mb="12"` (48px) - Between major sections
+- `mb="16"` (64px) - Page sections
+
+---
+
+## Code Examples
+
+### Component Padding
+
+```typescript
+import { css } from '../styled-system/css';
+
+const button = css({
+  px: '4',  // 16px horizontal
+  py: '2',  // 8px vertical
+});
+
+const card = css({
+  p: '6',   // 24px all sides
+});
+```
+
+### Layout Spacing
+
+```typescript
+import { Stack } from '../styled-system/jsx';
+
+<Stack gap="4">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Stack>
+```
+
+### Responsive Spacing
+
+```typescript
+const section = css({
+  p: { base: '4', md: '6', lg: '8' },
+  mb: { base: '8', md: '12' },
+});
+```
+
+---
+
+## Best Practices
+
+✅ **Do:**
+- Use the spacing scale consistently
+- Prefer larger spacing for better breathing room
+- Use multiples of 4px for custom values
+
+❌ **Don't:**
+- Use arbitrary pixel values
+- Mix spacing systems
+- Use spacing smaller than 4px (except 0)
+
+---
+
+**Next:** [Shadows](/?path=/docs/foundation-shadows--docs) • [Colors](/?path=/docs/foundation-colors--docs)

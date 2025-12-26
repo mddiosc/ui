@@ -1,0 +1,125 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ShadowBox } from '../components/DesignTokens';
+
+<Meta title="Foundation/Shadows" />
+
+# Shadows
+
+Shadows create depth and hierarchy, helping users understand spatial relationships.
+
+## Shadow Scale
+
+From subtle to dramatic elevation.
+
+<ShadowBox shadow="xs" label="xs - Minimal depth" />
+<ShadowBox shadow="sm" label="sm - Subtle elevation" />
+<ShadowBox shadow="md" label="md - Standard cards" />
+<ShadowBox shadow="lg" label="lg - Floating elements" />
+<ShadowBox shadow="xl" label="xl - Modals and popovers" />
+<ShadowBox shadow="2xl" label="2xl - Maximum elevation" />
+
+---
+
+## Usage Guidelines
+
+### When to Use Shadows
+
+**xs** - Minimal depth
+- Subtle borders alternative
+- Very slight elevation
+
+**sm** - Subtle elevation
+- Cards in lists
+- Hover states
+
+**md** - Standard elevation
+- Default cards
+- Dropdowns
+- Tooltips
+
+**lg** - Floating elements
+- Sticky headers
+- Floating action buttons
+- Elevated cards
+
+**xl** - High elevation
+- Modals
+- Popovers
+- Drawers
+
+**2xl** - Maximum elevation
+- Full-screen overlays
+- Critical modals
+
+---
+
+## Code Examples
+
+### Basic Usage
+
+```typescript
+import { css } from '../styled-system/css';
+
+const card = css({
+  boxShadow: 'md',
+  borderRadius: 'lg',
+  p: '6',
+});
+```
+
+### Interactive Shadows
+
+```typescript
+const interactiveCard = css({
+  boxShadow: 'sm',
+  transition: 'all',
+  transitionDuration: 'fast',
+  
+  _hover: {
+    boxShadow: 'lg',
+    transform: 'translateY(-2px)',
+  },
+});
+```
+
+### Layered Shadows
+
+```typescript
+const modal = css({
+  boxShadow: 'xl',
+  position: 'fixed',
+  zIndex: 50,
+});
+
+const backdrop = css({
+  boxShadow: '2xl',
+  position: 'fixed',
+  zIndex: 40,
+});
+```
+
+---
+
+## Accessibility
+
+- Shadows are decorative and don't convey meaning alone
+- Always pair with other visual cues (borders, colors)
+- Ensure sufficient contrast for interactive elements
+
+---
+
+## Best Practices
+
+✅ **Do:**
+- Use shadows to indicate elevation
+- Increase shadow on hover for interactive elements
+- Keep shadows subtle for better aesthetics
+
+❌ **Don't:**
+- Overuse heavy shadows
+- Rely solely on shadows for hierarchy
+- Mix shadow styles inconsistently
+
+---
+
+**Next:** [Colors](/?path=/docs/foundation-colors--docs) • [Typography](/?path=/docs/foundation-typography--docs)

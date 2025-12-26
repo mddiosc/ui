@@ -1,0 +1,110 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction/Getting Started" />
+
+# Getting Started
+
+Learn how to set up and use @mddiosc/ui in your project.
+
+## 📦 Installation
+
+Clone and setup:
+
+```bash
+git clone https://github.com/mddiosc/ui.git
+cd ui
+pnpm install
+pnpm panda codegen
+```
+
+## 🚀 Development
+
+Start Storybook:
+
+```bash
+pnpm storybook
+```
+
+Development playground:
+
+```bash
+pnpm dev
+```
+
+Run tests:
+
+```bash
+pnpm test
+pnpm test:watch
+pnpm test:coverage
+```
+
+## 📝 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `pnpm dev` | Start Vite dev server + Panda watch mode |
+| `pnpm build` | Build the library for production |
+| `pnpm storybook` | Start Storybook documentation |
+| `pnpm test` | Run tests with Vitest |
+| `pnpm lint` | Lint code with ESLint |
+| `pnpm panda codegen` | Regenerate Panda CSS styled-system |
+
+## 🎨 Using Components
+
+Basic usage:
+
+```tsx
+import { Button } from '@mddiosc/ui';
+
+function MyComponent() {
+  return (
+    <Button variant="primary" size="md">
+      Click me
+    </Button>
+  );
+}
+```
+
+With composition:
+
+```tsx
+<Button asChild>
+  <a href="/profile">Go to Profile</a>
+</Button>
+```
+
+## 🎯 Project Structure
+
+```
+ui/
+├── src/
+│   ├── components/
+│   ├── recipes/
+│   ├── docs/
+│   └── index.ts
+├── styled-system/
+├── .storybook/
+└── panda.config.ts
+```
+
+## 🆘 Troubleshooting
+
+### Styles not appearing
+
+```bash
+pnpm panda codegen
+pnpm storybook
+```
+
+### TypeScript errors
+
+Ensure styled-system is generated:
+
+```bash
+pnpm panda codegen
+```
+
+---
+
+Ready to explore? Check out the **Components** section in the sidebar!

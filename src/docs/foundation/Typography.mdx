@@ -1,0 +1,125 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TypographySpecimen } from '../components/DesignTokens';
+
+<Meta title="Foundation/Typography" />
+
+# Typography
+
+Our typography system ensures consistent, readable, and accessible text across all components.
+
+## Type Scale
+
+A harmonious scale of font sizes for different hierarchy levels.
+
+<TypographySpecimen size="xs" label="xs - 12px" />
+<TypographySpecimen size="sm" label="sm - 14px" />
+<TypographySpecimen size="md" label="md - 16px (base)" />
+<TypographySpecimen size="lg" label="lg - 18px" />
+<TypographySpecimen size="xl" label="xl - 20px" />
+<TypographySpecimen size="2xl" label="2xl - 24px" />
+<TypographySpecimen size="3xl" label="3xl - 30px" />
+
+---
+
+## Font Weights
+
+Available font weights for emphasis and hierarchy:
+
+- **thin** (100) - Rarely used
+- **light** (300) - Subtle text
+- **normal** (400) - Body text (default)
+- **medium** (500) - Slightly emphasized
+- **semibold** (600) - Headings and labels
+- **bold** (700) - Strong emphasis
+- **extrabold** (800) - Very strong emphasis
+- **black** (900) - Maximum emphasis
+
+---
+
+## Line Heights
+
+Control vertical rhythm and readability:
+
+- **none** (1) - Tight, for headings
+- **tight** (1.25) - Compact
+- **snug** (1.375) - Slightly relaxed
+- **normal** (1.5) - Body text (default)
+- **relaxed** (1.625) - Comfortable reading
+- **loose** (2) - Maximum spacing
+
+---
+
+## Usage Guidelines
+
+### Headings
+
+```typescript
+// H1 - Page titles
+fontSize: '3xl',
+fontWeight: 'bold',
+lineHeight: 'tight'
+
+// H2 - Section titles
+fontSize: '2xl',
+fontWeight: 'semibold',
+lineHeight: 'tight'
+
+// H3 - Subsection titles
+fontSize: 'xl',
+fontWeight: 'semibold',
+lineHeight: 'snug'
+```
+
+### Body Text
+
+```typescript
+// Regular body
+fontSize: 'md',
+fontWeight: 'normal',
+lineHeight: 'normal'
+
+// Small text
+fontSize: 'sm',
+fontWeight: 'normal',
+lineHeight: 'normal'
+```
+
+### UI Elements
+
+```typescript
+// Buttons
+fontSize: 'md',
+fontWeight: 'semibold',
+lineHeight: 'none'
+
+// Labels
+fontSize: 'sm',
+fontWeight: 'medium',
+lineHeight: 'tight'
+```
+
+---
+
+## Code Example
+
+```typescript
+import { css } from '../styled-system/css';
+
+const heading = css({
+  fontSize: '2xl',
+  fontWeight: 'bold',
+  lineHeight: 'tight',
+  color: 'text.primary',
+});
+
+const body = css({
+  fontSize: 'md',
+  fontWeight: 'normal',
+  lineHeight: 'normal',
+  color: 'text.secondary',
+});
+```
+
+---
+
+**Next:** [Spacing](/?path=/docs/foundation-spacing--docs) • [Shadows](/?path=/docs/foundation-shadows--docs)
