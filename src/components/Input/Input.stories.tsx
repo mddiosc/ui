@@ -182,7 +182,7 @@ export const ErrorState: Story = {
         aria-invalid="true"
         aria-describedby="error-message"
       />
-      <span id="error-message" style={{ fontSize: '0.75rem', color: '#dc2626' }}>
+      <span id="error-message" style={{ fontSize: '0.75rem', color: '#b91c1c' }}>
         Please enter a valid email address
       </span>
     </div>
@@ -215,7 +215,7 @@ export const SuccessState: Story = {
         {...args}
         id="success-input"
       />
-      <span style={{ fontSize: '0.75rem', color: '#16a34a' }}>
+      <span style={{ fontSize: '0.75rem', color: '#15803d' }}>
         ✓ Email is valid
       </span>
     </div>

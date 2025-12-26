@@ -23,15 +23,15 @@ export const badgeRecipe = cva({
         color: 'white',
       },
       success: {
-        bg: 'success.default',
+        bg: 'green.700',
         color: 'white',
       },
       warning: {
-        bg: 'warning.default',
-        color: 'white',
+        bg: 'yellow.200',
+        color: 'yellow.900',
       },
       error: {
-        bg: 'error.default',
+        bg: 'red.700',
         color: 'white',
       },
     },
