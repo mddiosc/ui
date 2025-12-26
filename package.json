@@ -17,6 +17,9 @@
     "test:coverage": "vitest run --coverage",
     "storybook": "pnpm panda codegen && storybook dev -p 6006",
     "build-storybook": "pnpm panda codegen && storybook build",
+    "test-storybook": "vitest run --project=storybook",
+    "test-storybook:watch": "vitest --project=storybook",
+    "test-storybook:coverage": "vitest run --project=storybook --coverage",
     "panda": "panda",
     "panda:codegen": "panda codegen"
   },
@@ -43,6 +46,7 @@
     "@storybook/react-vite": "^10.1.10",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
@@ -61,6 +65,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.16",
+    "vitest-axe": "^0.1.0"
   }
 }

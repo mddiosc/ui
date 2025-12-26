@@ -92,10 +92,10 @@ export const buttonRecipe = cva({
       },
       
       destructive: {
-        bg: 'error.default',
-        color: 'text.inverse',
+        bg: 'red.700',
+        color: 'white',
         _hover: {
-          bg: 'error.hover',
+          bg: 'red.800',
         },
       },
     },
