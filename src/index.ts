@@ -6,6 +6,7 @@ export { Avatar, type AvatarProps } from './atoms/Avatar';
 export { Icon, type IconProps, type IconName, allIconNames } from './atoms/Icon';
 export { Text, type TextProps } from './atoms/Text';
 export { Heading, type HeadingProps } from './atoms/Heading';
+export { Checkbox, type CheckboxProps } from './atoms/Checkbox';
 
 // Molecules
 export { Card, CardHeader, CardContent, CardFooter, type CardProps } from './molecules/Card';
