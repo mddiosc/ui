@@ -7,6 +7,8 @@ export { Icon, type IconProps, type IconName, allIconNames } from './atoms/Icon'
 export { Text, type TextProps } from './atoms/Text';
 export { Heading, type HeadingProps } from './atoms/Heading';
 export { Checkbox, type CheckboxProps } from './atoms/Checkbox';
+export { Radio, type RadioProps } from './atoms/Radio';
+export { Switch, type SwitchProps } from './atoms/Switch';
 
 // Molecules
 export { Card, CardHeader, CardContent, CardFooter, type CardProps } from './molecules/Card';
