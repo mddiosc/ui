@@ -15,7 +15,36 @@ const preview: Preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: 'todo'
-    }
+    },
+
+    options: {
+      storySort: {
+        order: [
+          'Introduction',
+          'Design System',
+          ['Overview', 'Colors', 'Typography', 'Spacing', 'Shadows'],
+          'Components',
+          ['Button', 'Input', 'Badge', 'Avatar', 'Card'],
+        ],
+      },
+    },
+
+    viewport: {
+      viewports: {
+        mobile: {
+          name: 'Mobile',
+          styles: { width: '375px', height: '667px' },
+        },
+        tablet: {
+          name: 'Tablet',
+          styles: { width: '768px', height: '1024px' },
+        },
+        desktop: {
+          name: 'Desktop',
+          styles: { width: '1440px', height: '900px' },
+        },
+      },
+    },
   },
 };
 
