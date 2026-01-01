@@ -17,8 +17,8 @@ cmds = [
 ]
 
 [start]
-# Serve the static Storybook build using a simple HTTP server
-cmd = "npx --yes serve storybook-static -l $PORT --no-clipboard"
+# Serve the static Storybook build using Caddy
+cmd = "caddy file-server --root storybook-static --listen :$PORT"
 
 [variables]
 NODE_ENV = "production"
