@@ -18,7 +18,7 @@ cmds = [
 
 [start]
 # Serve the static Storybook build using a simple HTTP server
-cmd = "npx serve storybook-static -l $PORT --no-clipboard"
+cmd = "npx --yes serve storybook-static -l $PORT --no-clipboard"
 
 [variables]
 NODE_ENV = "production"
