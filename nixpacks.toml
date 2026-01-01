@@ -1,0 +1,23 @@
+# Nixpacks configuration for Dokploy deployment
+# This project is a React component library with Storybook
+
+[phases.setup]
+nixPkgs = ["nodejs_24", "pnpm"]
+
+[phases.install]
+cmds = [
+  "pnpm install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  "pnpm panda codegen",
+  "pnpm build-storybook"
+]
+
+[start]
+# Serve the static Storybook build using a simple HTTP server
+cmd = "npx serve storybook-static -l $PORT --no-clipboard"
+
+[variables]
+NODE_ENV = "production"
