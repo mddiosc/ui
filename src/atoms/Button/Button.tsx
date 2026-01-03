@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
+import clsx from 'clsx';
 import { buttonRecipe } from '../../recipes/button.recipe';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -40,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     
     return (
       <Comp
-        className={buttonRecipe({ variant, size }) + (className ? ` ${className}` : '')}
+        className={clsx(buttonRecipe({ variant, size }), className)}
         ref={ref}
         {...props}
       />

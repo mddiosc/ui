@@ -40,15 +40,6 @@ export const inputRecipe = cva({
   },
   
   variants: {
-    variant: {
-      text: {},
-      email: {},
-      password: {},
-      search: {
-        pl: '10',
-      },
-    },
-    
     size: {
       sm: {
         h: '8',
@@ -87,7 +78,6 @@ export const inputRecipe = cva({
   },
   
   defaultVariants: {
-    variant: 'text',
     size: 'md',
     state: 'default',
   },

@@ -11,6 +11,13 @@ export const avatarRecipe = cva({
     color: 'text.secondary',
     fontWeight: 'medium',
     flexShrink: 0,
+    
+    // Estilos para la imagen
+    '& img': {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    },
   },
   
   variants: {

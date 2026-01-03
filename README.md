@@ -58,16 +58,32 @@ This is a **portfolio project** demonstrating my skills in:
 
 ## 📦 Components
 
-### Available Components
+### Available Components (13)
 
+#### Atoms (10)
 - ✅ **Button** - Multiple variants (primary, secondary, outline, ghost, link, destructive) and sizes
+- ✅ **Input** - Text inputs with validation states (default, error, success) and multiple types
+- ✅ **Badge** - Status indicators and labels with color variants
+- ✅ **Avatar** - User profile images with fallback support  
+- ✅ **Icon** - 1000+ Lucide icons with size and color variants
+- ✅ **Text** - Typography component with semantic variants
+- ✅ **Heading** - Semantic headings (h1-h6) with customization
+- ✅ **Checkbox** - Boolean input with indeterminate state support
+- ✅ **Radio** - Mutually exclusive selection in groups
+- ✅ **Switch** - Toggle for boolean states
+
+#### Molecules (3)
+- ✅ **Card** - Content containers with header, content, and footer sections
+- ✅ **FormField** - Form wrapper with label, helper text, and error messages  
+- ✅ **Select** - Dropdown selection (Radix UI-based, keyboard accessible, fully styled)
 
 ### Coming Soon
 
-- 🚧 Input
-- 🚧 Select
-- 🚧 Checkbox / Radio / Switch
-- 🚧 Dialog / Modal
+- 🚧 **Dialog / Modal** - Accessible dialogs with Radix UI
+- 🚧 **Dropdown Menu** - Context menus and action menus
+- 🚧 **Tooltip** - Contextual information on hover
+- 🚧 **Toast** - Notification system
+- 🚧 **Tabs** - Tabbed interfaces
 
 ## 🚀 Getting Started
 

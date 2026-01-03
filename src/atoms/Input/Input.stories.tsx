@@ -10,11 +10,11 @@ const meta = {
     docs: {
       description: {
         component: `
-A flexible input component with multiple variants, sizes, and states for form interactions. Built with Panda CSS for zero-runtime styling and full accessibility support.
+A flexible input component with multiple types, sizes, and states for form interactions. Built with Panda CSS for zero-runtime styling and full accessibility support.
 
 ## Key Features
 
-- ✅ **4 Variants** - Text, Email, Password, Search
+- ✅ **Standard HTML Types** - Text, Email, Password, Search, Number, Tel, URL, and more
 - ✅ **3 Sizes** - Small, Medium, Large
 - ✅ **3 States** - Default, Error, Success
 - ✅ **Fully Accessible** - ARIA compliant with proper labels
@@ -26,10 +26,10 @@ A flexible input component with multiple variants, sizes, and states for form in
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
+    type: {
       control: 'select',
-      options: ['text', 'email', 'password', 'search'],
-      description: 'The input type variant',
+      options: ['text', 'email', 'password', 'search', 'number', 'tel', 'url'],
+      description: 'The HTML input type',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'text' },
@@ -82,18 +82,20 @@ A flexible input component with multiple variants, sizes, and states for form in
 export default meta;
 type Story = StoryObj<typeof Input>;
 
-// Story 1: All Variants
-export const AllVariants: Story = {
+// Story 1: All Types
+export const AllTypes: Story = {
   args: {
     size: 'md',
     placeholder: 'Enter text',
   },
   render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '300px' }}>
-      <Input {...args} variant="text" placeholder="Text input" />
-      <Input {...args} variant="email" placeholder="Email input" />
-      <Input {...args} variant="password" placeholder="Password input" />
-      <Input {...args} variant="search" placeholder="Search input" />
+      <Input {...args} type="text" placeholder="Text input" />
+      <Input {...args} type="email" placeholder="Email input" />
+      <Input {...args} type="password" placeholder="Password input" />
+      <Input {...args} type="search" placeholder="Search input" />
+      <Input {...args} type="number" placeholder="Number input" />
+      <Input {...args} type="tel" placeholder="Tel input" />
     </div>
   ),
 };
@@ -101,7 +103,7 @@ export const AllVariants: Story = {
 // Story 2: All Sizes
 export const AllSizes: Story = {
   args: {
-    variant: 'text',
+    type: 'text',
     placeholder: 'Input',
   },
   render: (args) => (
@@ -116,7 +118,7 @@ export const AllSizes: Story = {
 // Story 3: With Label
 export const WithLabel: Story = {
   args: {
-    variant: 'email',
+    type: 'email',
     placeholder: 'you@example.com',
     size: 'md',
   },
@@ -154,7 +156,7 @@ export const WithHelperText: Story = {
         <label htmlFor="password" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
           Password
         </label>
-        <Input {...args} id="password" variant="password" placeholder="Enter password" />
+        <Input {...args} id="password" type="password" placeholder="Enter password" />
         <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>
           Must be at least 8 characters
         </span>
@@ -166,7 +168,7 @@ export const WithHelperText: Story = {
 // Story 5: Error State with Play Function
 export const ErrorState: Story = {
   args: {
-    variant: 'email',
+    type: 'email',
     error: true,
     placeholder: 'you@example.com',
     size: 'md',
@@ -201,7 +203,7 @@ export const ErrorState: Story = {
 // Story 6: Success State
 export const SuccessState: Story = {
   args: {
-    variant: 'email',
+    type: 'email',
     state: 'success',
     defaultValue: 'user@example.com',
     size: 'md',

@@ -1,5 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import { icons } from 'lucide-react';
+import clsx from 'clsx';
 import { iconRecipe } from '../../recipes/icon.recipe';
 import { type IconName } from './icon-types';
 
@@ -24,7 +25,7 @@ export const Icon = ({ name, size = 'md', color = 'default', className, ...props
 
   return (
     <span
-      className={`${iconRecipe({ size, color })} ${className || ''}`}
+      className={clsx(iconRecipe({ size, color }), className)}
       {...props}
     >
       <IconComponent size="100%" strokeWidth={2} />

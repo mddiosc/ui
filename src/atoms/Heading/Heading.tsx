@@ -1,4 +1,5 @@
 import { type HTMLAttributes } from 'react';
+import clsx from 'clsx';
 import { headingRecipe } from '../../recipes/typography.recipe';
 
 export interface HeadingProps extends Omit<HTMLAttributes<HTMLHeadingElement>, 'color'> {
@@ -25,7 +26,7 @@ export const Heading = ({
   
   return (
     <Component
-      className={`${headingRecipe({ level, weight, align, color })} ${className || ''}`}
+      className={clsx(headingRecipe({ level, weight, align, color }), className)}
       {...props}
     >
       {children}

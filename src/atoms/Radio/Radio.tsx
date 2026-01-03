@@ -1,4 +1,5 @@
 import { type InputHTMLAttributes, forwardRef } from 'react';
+import clsx from 'clsx';
 import { radioRecipe, radioInputRecipe, radioLabelRecipe } from '../../recipes/radio.recipe';
 
 export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
@@ -12,7 +13,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
   ({ size = 'md', label, disabled, className, ...props }, ref) => {
     return (
       <label 
-        className={`${radioRecipe()} ${className || ''}`}
+        className={clsx(radioRecipe(), className)}
         data-disabled={disabled}
       >
         <input

@@ -1,4 +1,5 @@
 import { type HTMLAttributes } from 'react';
+import clsx from 'clsx';
 import { badgeRecipe } from '../../recipes/badge.recipe';
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
@@ -9,7 +10,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 export const Badge = ({ variant = 'default', size = 'md', className, children, ...props }: BadgeProps) => {
   return (
     <span
-      className={`${badgeRecipe({ variant, size })} ${className || ''}`}
+      className={clsx(badgeRecipe({ variant, size }), className)}
       {...props}
     >
       {children}

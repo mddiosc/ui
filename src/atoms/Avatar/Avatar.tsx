@@ -1,4 +1,5 @@
 import { type HTMLAttributes } from 'react';
+import clsx from 'clsx';
 import { avatarRecipe } from '../../recipes/avatar.recipe';
 
 export interface AvatarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
@@ -13,14 +14,13 @@ export const Avatar = ({ size = 'md', src, alt, fallback, className, ...props }:
   
   return (
     <div
-      className={`${avatarRecipe({ size })} ${className || ''}`}
+      className={clsx(avatarRecipe({ size }), className)}
       {...props}
     >
       {src ? (
         <img
           src={src}
           alt={alt || 'Avatar'}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       ) : (
         <span>{initials}</span>
