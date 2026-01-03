@@ -1,5 +1,6 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
-import { cardRecipe } from '../../recipes/card.recipe';
+import clsx from 'clsx';
+import { cardRecipe, cardHeaderRecipe, cardContentRecipe, cardFooterRecipe } from '../../recipes/card.recipe';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'outlined' | 'elevated';
@@ -9,7 +10,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card = ({ variant = 'default', className, children, ...props }: CardProps) => {
   return (
     <div
-      className={`${cardRecipe({ variant })} ${className || ''}`}
+      className={clsx(cardRecipe({ variant }), className)}
       {...props}
     >
       {children}
@@ -20,8 +21,7 @@ export const Card = ({ variant = 'default', className, children, ...props }: Car
 export const CardHeader = ({ className, children, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={className}
-      style={{ padding: '1.5rem', borderBottom: '1px solid #e5e7eb' }}
+      className={clsx(cardHeaderRecipe(), className)}
       {...props}
     >
       {children}
@@ -32,8 +32,7 @@ export const CardHeader = ({ className, children, ...props }: HTMLAttributes<HTM
 export const CardContent = ({ className, children, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={className}
-      style={{ padding: '1.5rem' }}
+      className={clsx(cardContentRecipe(), className)}
       {...props}
     >
       {children}
@@ -44,8 +43,7 @@ export const CardContent = ({ className, children, ...props }: HTMLAttributes<HT
 export const CardFooter = ({ className, children, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={className}
-      style={{ padding: '1.5rem', borderTop: '1px solid #e5e7eb' }}
+      className={clsx(cardFooterRecipe(), className)}
       {...props}
     >
       {children}

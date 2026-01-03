@@ -9,17 +9,17 @@ describe('Input', () => {
     expect(screen.getByPlaceholderText('Enter text')).toBeInTheDocument();
   });
 
-  it('renders all variants', () => {
-    const { rerender } = render(<Input variant="text" data-testid="input" />);
+  it('renders different input types', () => {
+    const { rerender } = render(<Input type="text" data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveAttribute('type', 'text');
 
-    rerender(<Input variant="email" data-testid="input" />);
+    rerender(<Input type="email" data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveAttribute('type', 'email');
 
-    rerender(<Input variant="password" data-testid="input" />);
+    rerender(<Input type="password" data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveAttribute('type', 'password');
 
-    rerender(<Input variant="search" data-testid="input" />);
+    rerender(<Input type="search" data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveAttribute('type', 'search');
   });
 

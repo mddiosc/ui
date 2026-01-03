@@ -1,4 +1,5 @@
 import { type ReactNode, type HTMLAttributes } from 'react';
+import clsx from 'clsx';
 import { formFieldRecipe, formLabelRecipe, formHelperTextRecipe } from '../../recipes/form-field.recipe';
 
 export interface FormFieldProps extends HTMLAttributes<HTMLDivElement> {
@@ -30,7 +31,7 @@ export const FormField = ({
   const displayText = error || helperText;
 
   return (
-    <div className={`${formFieldRecipe()} ${className || ''}`} {...props}>
+    <div className={clsx(formFieldRecipe(), className)} {...props}>
       {label && (
         <label
           htmlFor={htmlFor}

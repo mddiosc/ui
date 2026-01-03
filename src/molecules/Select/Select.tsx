@@ -1,4 +1,5 @@
 import { type SelectHTMLAttributes, forwardRef } from 'react';
+import clsx from 'clsx';
 import { selectRecipe } from '../../recipes/select.recipe';
 
 export interface SelectOption {
@@ -21,7 +22,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <select
         ref={ref}
-        className={`${selectRecipe({ size })} ${className || ''}`}
+        className={clsx(selectRecipe({ size }), className)}
         {...props}
       >
         {placeholder && (

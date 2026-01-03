@@ -1,4 +1,5 @@
 import { type InputHTMLAttributes, forwardRef } from 'react';
+import clsx from 'clsx';
 import { switchRecipe, switchInputRecipe, switchLabelRecipe } from '../../recipes/switch.recipe';
 
 export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
@@ -12,7 +13,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
   ({ size = 'md', label, disabled, className, ...props }, ref) => {
     return (
       <label 
-        className={`${switchRecipe()} ${className || ''}`}
+        className={clsx(switchRecipe(), className)}
         data-disabled={disabled}
       >
         <input

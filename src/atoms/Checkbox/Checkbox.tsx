@@ -1,4 +1,5 @@
 import { type InputHTMLAttributes, forwardRef } from 'react';
+import clsx from 'clsx';
 import { checkboxRecipe, checkboxInputRecipe, checkboxLabelRecipe } from '../../recipes/checkbox.recipe';
 
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
@@ -12,7 +13,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ size = 'md', label, disabled, className, ...props }, ref) => {
     return (
       <label 
-        className={`${checkboxRecipe()} ${className || ''}`}
+        className={clsx(checkboxRecipe(), className)}
         data-disabled={disabled}
       >
         <input

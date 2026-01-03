@@ -28,3 +28,25 @@ export const cardRecipe = cva({
     variant: 'default',
   },
 });
+
+export const cardHeaderRecipe = cva({
+  base: {
+    padding: '6', // 1.5rem
+    borderBottom: '1px solid',
+    borderColor: 'border.default',
+  },
+});
+
+export const cardContentRecipe = cva({
+  base: {
+    padding: '6', // 1.5rem
+  },
+});
+
+export const cardFooterRecipe = cva({
+  base: {
+    padding: '6', // 1.5rem
+    borderTop: '1px solid',
+    borderColor: 'border.default',
+  },
+});

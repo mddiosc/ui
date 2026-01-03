@@ -1,4 +1,5 @@
 import { type HTMLAttributes, type ElementType } from 'react';
+import clsx from 'clsx';
 import { textRecipe } from '../../recipes/typography.recipe';
 
 export interface TextProps extends Omit<HTMLAttributes<HTMLElement>, 'color'> {
@@ -28,7 +29,7 @@ export const Text = ({
   
   return (
     <Component
-      className={`${textRecipe({ size, weight, align, color })} ${className || ''}`}
+      className={clsx(textRecipe({ size, weight, align, color }), className)}
       {...props}
     >
       {children}
