@@ -126,6 +126,41 @@ pnpm build
 
 Visit the [Storybook documentation](https://ui.migueldedioscalles.dev) to see all components in action.
 
+## 🚀 Deployment (Dokploy + Docker)
+
+This project is deployed as a static Storybook site using Docker and Nginx.
+
+### Production build
+
+```bash
+pnpm build-storybook
+```
+
+This generates the static files in `storybook-static/`.
+
+### Docker deployment
+
+The repository includes:
+
+- `Dockerfile` - multi-stage build (Node + pnpm for build, Nginx for serving)
+- `nginx.conf` - static hosting and cache headers
+- `.dockerignore` - optimized Docker context
+
+Build and run locally:
+
+```bash
+docker build -t mddiosc-ui-storybook .
+docker run --rm -p 8080:80 mddiosc-ui-storybook
+```
+
+Then open `http://localhost:8080`.
+
+### Dokploy settings
+
+- Build type: `Dockerfile`
+- Internal container port for domain mapping: `80`
+- No runtime environment variables are required for Storybook static hosting
+
 ## 🎨 Design System
 
 ### Design Tokens
